@@ -1,10 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+html, :root {
+  /* Compensar media rem pra 1rem = 10px */
+  font-size: 62.5%;
+
+  /* Cards */
+  --card-laranja: hsl(15, 100%, 70%);
+  --card-azul: hsl(195, 74%, 62%);
+  --card-vermelho: hsl(348, 100%, 68%);
+  --card-verde: hsl(145, 58%, 55%);
+  --card-roxo: hsl(264, 64%, 52%);
+  --card-amarelo: hsl(43, 84%, 65%);
+
+  /* Fundos */
+  --bg-azul-muito-escuro: hsl(226, 43%, 10%);
+  --bg-azul-escuro: hsl(235, 46%, 20%);
+  --bg-azul: hsl(246, 80%, 60%);
+  --bg-azul-claro: hsl(235, 45%, 61%);
+  --bg-azul-muito-claro: hsl(236, 100%, 87%);
+
+  /* Fontes */
+  --fonte-branca: #FFF;
+  --fonte-azul: #707CC9;
+  --fonte-azul-claro: #BBC0FF;
+
+  --fonte-muito-grande: 5.6rem;
+  --fonte-grande: 4rem;
+  --fonte-media: 2.4rem;
+  --fonte-pequena: 1.8rem;
+  --fonte-muito-peguna: 1.5rem;
+
+  --font-family: 'Rubik', sans-serif;
+}
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
-  outline: none;
+  font-family: var(--font-family);
+  color: var(--fonte-branca);
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
-  font-family: sans-serif;
+  background-color: var(--bg-azul-muito-escuro);
 }

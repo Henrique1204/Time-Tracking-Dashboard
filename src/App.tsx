@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = (): JSX.Element => {
-  return <div className="App">Olá Mundo</div>;
+  return <main className="App">Olá Mundo</main>;
 };
 
 export default App;
