@@ -31,6 +31,9 @@ html, :root {
   --fonte-muito-peguna: 1.5rem;
 
   --font-family: 'Rubik', sans-serif;
+
+  /* Outras medidas */
+  --radius: 1.5rem;
 }
 
 *, *::after, *::before {

@@ -1,0 +1,23 @@
+.container {
+  max-width: fit-content;
+  padding: 3.2rem;
+  border-radius: var(--radius);
+  line-height: 1.2;
+  background-color: var(--bg-azul);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.subtitulo {
+  margin: 4.4rem 0 0.4rem;
+  font-size: var(--fonte-muito-peguna);
+  color: var(--fonte-azul-claro);
+  display: block;
+}
+
+.titulo {
+  max-width: 13.5rem;
+  font-size: var(--fonte-grande);
+  font-weight: 300;
+}
