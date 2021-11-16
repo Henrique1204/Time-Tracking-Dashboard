@@ -1,5 +1,4 @@
 .container {
-  max-width: fit-content;
   padding: 3.2rem;
   border-radius: var(--radius);
   line-height: 1.2;

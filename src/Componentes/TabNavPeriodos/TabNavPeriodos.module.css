@@ -1,6 +1,5 @@
 .container {
-  max-width: fit-content;
-  padding: 3.2rem;
+  padding: 1.8rem 2.4rem 2.4rem;
   background-color: var(--bg-azul-escuro);
 }
 
