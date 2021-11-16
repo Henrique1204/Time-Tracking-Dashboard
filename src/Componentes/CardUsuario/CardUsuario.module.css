@@ -6,11 +6,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex: 1;
 }
 
 .subtitulo {
   margin: 4.4rem 0 0.4rem;
-  font-size: var(--fonte-muito-peguna);
+  font-size: var(--fonte-muito-pequena);
   color: var(--fonte-azul-claro);
   display: block;
 }

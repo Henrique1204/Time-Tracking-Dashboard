@@ -1,5 +1,9 @@
 .container {
   border-radius: var(--radius);
   background-color: var(--bg-azul-escuro);
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
 }

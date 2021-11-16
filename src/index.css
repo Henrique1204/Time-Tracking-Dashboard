@@ -16,8 +16,7 @@ html, :root {
   --bg-azul-muito-escuro: hsl(226, 43%, 10%);
   --bg-azul-escuro: hsl(235, 46%, 20%);
   --bg-azul: hsl(246, 80%, 60%);
-  --bg-azul-claro: hsl(235, 45%, 61%);
-  --bg-azul-muito-claro: hsl(236, 100%, 87%);
+  --bg-azul-claro: hsla(236, 41%, 34%, 1);
 
   /* Fontes */
   --fonte-branca: #FFF;
@@ -28,7 +27,7 @@ html, :root {
   --fonte-grande: 4rem;
   --fonte-media: 2.4rem;
   --fonte-pequena: 1.8rem;
-  --fonte-muito-peguna: 1.5rem;
+  --fonte-muito-pequena: 1.5rem;
 
   --font-family: 'Rubik', sans-serif;
 
@@ -53,9 +52,11 @@ body {
 }
 
 .App {
+  padding: 3.2rem 0;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 255px);
-  align-items: center;
+  grid-template-rows: repeat(2, 245px);
+  gap: 3rem;
   justify-content: center;
 }
