@@ -1,5 +1,4 @@
 .container {
-  max-width: fit-content;
   border-radius: var(--radius);
   background-color: var(--bg-azul-escuro);
   overflow: hidden;

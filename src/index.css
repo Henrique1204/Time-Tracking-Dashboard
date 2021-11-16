@@ -51,3 +51,11 @@ html, :root {
 body {
   background-color: var(--bg-azul-muito-escuro);
 }
+
+.App {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  align-items: center;
+  justify-content: center;
+}
