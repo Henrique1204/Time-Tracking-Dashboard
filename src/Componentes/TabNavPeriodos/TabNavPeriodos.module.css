@@ -1,0 +1,28 @@
+.container {
+  max-width: fit-content;
+  padding: 3.2rem;
+  background-color: var(--bg-azul-escuro);
+}
+
+.opcaoTab + .opcaoTab {
+  margin-top: 0.4rem;
+}
+
+.opcaoTab.ativo button,
+.opcaoTab button:hover,
+.opcaoTab button:focus,
+.opcaoTab button:active {
+  color: #FFF;
+}
+
+.opcaoTab button {
+  padding: 0.8rem;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--fonte-azul-claro);
+  line-height: 1.2;
+  background-color: transparent;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}

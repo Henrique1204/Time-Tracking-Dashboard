@@ -40,6 +40,9 @@ html, :root {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
+  font-weight: 400;
+  list-style: none;
+  text-decoration: none;
   color: var(--fonte-branca);
   box-sizing: border-box;
   outline: none;
