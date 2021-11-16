@@ -1,12 +1,11 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
 import estilos from './TabNavPeriodos.module.css';
 
-type TabNavPeriodosProps = {
-  children?: ReactNode;
-};
-
-const TabNavPeriodos: FC<TabNavPeriodosProps> = () => {
+/**
+ * Componente responsável pela navegação entre as tabs dos períodos das atividades.
+ */
+const TabNavPeriodos: FC = () => {
   return (
     <nav className={estilos.container}>
       <ul>
