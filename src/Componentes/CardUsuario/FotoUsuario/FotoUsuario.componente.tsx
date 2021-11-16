@@ -9,8 +9,8 @@ type FotoUsuarioProps = {
 
 /**
  * Componente responsável por exbibir a imagem de perfil do usuário.
- * @param {string} props.src Caminho da imagem.
- * @param {string} props.alt Texto alternativo da imagem.
+ * @param {string} src Caminho da imagem.
+ * @param {string} alt Texto alternativo da imagem.
  */
 const FotoUsuario: FC<FotoUsuarioProps> = ({ src, alt }) => {
   return (

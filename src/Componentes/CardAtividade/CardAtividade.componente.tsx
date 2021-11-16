@@ -18,9 +18,9 @@ type CardAtividadeProps = {
 
 /**
  * Componente responsável por exbibir as informações das atividades do usuário.
- * @param {TipoAtividade} props.tipo Tipo de atividade que o usuário realziou.
- * @param {number} props.horaAtual Quantas horas o usuário executou a atividade no período atual.
- * @param {number} props.horasPassadas Quantas horas o usuário executou a atividade no período passado.
+ * @param {TipoAtividade} tipo Tipo de atividade que o usuário realziou.
+ * @param {number} horaAtual Quantas horas o usuário executou a atividade no período atual.
+ * @param {number} horasPassadas Quantas horas o usuário executou a atividade no período passado.
  */
 const CardAtividade: FC<CardAtividadeProps> = ({
   tipo,

@@ -10,8 +10,8 @@ type CardUsuarioProps = {
 
 /**
  * Componente responsável por exbibir as informações do perfil do usuário.
- * @param {string} props.foto Caimnho para a foto do usuário.
- * @param {string} props.nome Nome do usuário.
+ * @param {string} foto Caimnho para a foto do usuário.
+ * @param {string} nome Nome do usuário.
  */
 const CardUsuario: FC<CardUsuarioProps> = ({ foto, nome }) => {
   return (
