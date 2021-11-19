@@ -48,18 +48,42 @@ html, :root {
 }
 
 body {
+  width: 100%;
+  padding: 3rem;
   min-height: 100vh;
   background-color: var(--bg-azul-muito-escuro);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
   align-items: center;
 }
 
 .App {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 255px);
+  grid-template-columns: repeat(4, minmax(auto, 255px));
   grid-template-rows: repeat(2, 245px);
   gap: 3rem;
   justify-content: center;
+}
+
+@media (max-width: 1028px) {
+  body {
+    padding: 2rem;
+  }
+
+  .App {
+    grid-template-columns: repeat(3, minmax(auto, 220px));
+    grid-template-rows: repeat(3, 245px);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1028px) {
+  .App {
+    max-width: 580px;
+    grid-template-columns: 1fr;
+    grid-template-rows: initial;
+    gap: 2rem;
+  }
 }

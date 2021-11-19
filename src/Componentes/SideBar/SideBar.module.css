@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
   border-radius: var(--radius);
   background-color: var(--bg-azul-escuro);
   grid-row: 1 / -1;
