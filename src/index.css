@@ -48,12 +48,15 @@ html, :root {
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--bg-azul-muito-escuro);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
-  padding: 3.2rem 0;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 255px);
   grid-template-rows: repeat(2, 245px);
