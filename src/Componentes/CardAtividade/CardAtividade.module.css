@@ -1,7 +1,7 @@
 .container {
   width: 100%;
-  padding-top: 4.5rem;
   max-height: 200px;
+  padding-top: 4.5rem;
   border-radius: var(--radius);
   background-repeat: no-repeat;
   background-position: calc(100% - 1.4rem) -1rem;
@@ -79,4 +79,30 @@
   font-size: var(--fonte-muito-pequena);
   color: var(--fonte-azul-claro);
   display: block;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-height: 160px;
+    padding-top: 3.8rem;
+  }
+
+  .conteudo {
+    padding: 2.4rem;
+    height: 122px;
+    grid-template-columns: 100px 1fr;
+  }
+
+  .categoria {
+    font-size: var(--fonte-pequena);
+  }
+
+  .horas {
+    grid-column: 1;
+    font-size: var(--fonte-media-grande);
+  }
+
+  .ultimaSemana {
+    margin-left: auto;
+  }
 }

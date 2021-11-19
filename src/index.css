@@ -25,6 +25,7 @@ html, :root {
 
   --fonte-muito-grande: 5.6rem;
   --fonte-grande: 4rem;
+  --fonte-media-grande: 3.2rem;
   --fonte-media: 2.4rem;
   --fonte-pequena: 1.8rem;
   --fonte-muito-pequena: 1.5rem;
@@ -83,7 +84,7 @@ body {
   .App {
     max-width: 580px;
     grid-template-columns: 1fr;
-    grid-template-rows: initial;
+    grid-template-rows: auto repeat(6, 160px);
     gap: 2rem;
   }
 }

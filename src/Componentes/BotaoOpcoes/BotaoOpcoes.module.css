@@ -34,10 +34,25 @@
 
 .bolinhas::after {
   position: absolute;
-  left: -7px;
+  left: calc(-100% - 3px);
 }
 
 .bolinhas::before {
   position: absolute;
-  right: -7px;
+  right: calc(-100% - 3px);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 2rem;
+    margin-left: auto;
+  }
+
+  .bolinhas,
+  .bolinhas::after,
+  .bolinhas::before {
+    width: 6px;
+    height: 6px;
+  }
 }
