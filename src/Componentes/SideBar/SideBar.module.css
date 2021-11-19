@@ -8,3 +8,10 @@
   justify-content: flex-end;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-row: 1;
+  }
+}
+

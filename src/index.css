@@ -79,7 +79,7 @@ body {
   }
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 768px) {
   .App {
     max-width: 580px;
     grid-template-columns: 1fr;

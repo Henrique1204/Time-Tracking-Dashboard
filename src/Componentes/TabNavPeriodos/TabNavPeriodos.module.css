@@ -26,3 +26,19 @@
   cursor: pointer;
   outline: none;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2.4rem;
+  }
+
+  .container ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .opcaoTab + .opcaoTab {
+    margin-top: 0;
+  }
+}

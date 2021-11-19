@@ -22,3 +22,28 @@
   font-size: var(--fonte-grande);
   font-weight: 300;
 }
+
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    flex-direction: none;
+    grid-template-columns: 64px minmax(auto, 280px);
+    gap: 0 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subtitulo, .titulo {
+    max-width: fit-content;
+    grid-column: 2;
+  }
+
+  .subtitulo {
+    margin: 0;
+  }
+
+  .titulo {
+    font-size: var(--fonte-media);
+  }
+}
+
