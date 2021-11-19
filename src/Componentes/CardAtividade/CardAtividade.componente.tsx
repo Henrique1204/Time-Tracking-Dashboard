@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import BotaoOpcoes from '../BotaoOpcoes';
 
 import estilos from './CardAtividade.module.css';
 
@@ -27,10 +28,17 @@ const CardAtividade: FC<CardAtividadeProps> = ({
   horasAtuais,
   horasPassadas,
 }) => {
+  const [opcoesHover, setOpcoesHover] = React.useState<boolean>(false);
+
   return (
     <div className={`${estilos.container} ${estilos[tipo]}`}>
-      <div className={estilos.conteudo}>
+      <div className={estilos.conteudo} data-hoverInativo={opcoesHover}>
         <span className={estilos.categoria}>{tipo.replace('_', ' ')}</span>
+
+        <BotaoOpcoes
+          onMouseEnter={() => setOpcoesHover(true)}
+          onMouseLeave={() => setOpcoesHover(false)}
+        />
 
         <h2 className={estilos.horas}>{horasAtuais}hrs</h2>
 

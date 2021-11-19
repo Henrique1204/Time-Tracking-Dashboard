@@ -48,14 +48,15 @@
   background-color: var(--bg-azul-escuro);
   display: grid;
   grid-template-columns: 1fr 1.6rem;
+  align-items: center;
   position: absolute;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.conteudo:hover,
-.conteudo:focus,
-.conteudo:active {
+.conteudo[data-hoverInativo=false]:hover,
+.conteudo[data-hoverInativo=false]:focus,
+.conteudo[data-hoverInativo=false]:active {
   background-color: var(--bg-azul-claro);
 }
 

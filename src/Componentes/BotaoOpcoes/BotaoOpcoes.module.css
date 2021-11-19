@@ -1,0 +1,43 @@
+.container {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  color: var(--fonte-azul-claro);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.container:hover,
+.container:active,
+.container:focus {
+  color: var(--fonte-branca);
+}
+
+.bolinhas,
+.bolinhas::after,
+.bolinhas::before {
+  content: '';
+  width: 4px;
+  height: 5px;
+  border-radius: 50%;
+  color: inherit;
+  background-color: currentColor;
+  display: block;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.bolinhas::after {
+  position: absolute;
+  left: -7px;
+}
+
+.bolinhas::before {
+  position: absolute;
+  right: -7px;
+}
