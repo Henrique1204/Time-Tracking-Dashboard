@@ -50,10 +50,17 @@ export const AtividadeProvider: React.FC = ({ children }) => {
     ) as TimeframeKeys;
 
     const timeframeAtivo: TimeframeKeys =
-      timeframeInStorage || state.timeframeAtivo || 'daily';
+      timeframeInStorage || state.timeframeAtivo;
+
+    if (!timeframeAtivo) {
+      return dispatch({
+        type: AtividadeActionName.SET_TIMEFRAME_DAILY,
+        payload: null,
+      });
+    }
 
     const atividades = data.map(({ title, timeframes }) => ({
-      title,
+      title: title.toLowerCase().replace(' ', '_'),
       timeframes: timeframes[timeframeAtivo],
     }));
 

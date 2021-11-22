@@ -3,18 +3,22 @@ import BotaoOpcoes from '../BotaoOpcoes';
 
 import estilos from './CardAtividade.module.css';
 
-type TipoAtividade =
-  | 'work'
-  | 'play'
-  | 'study'
-  | 'exercise'
-  | 'social'
-  | 'self_care';
+import {
+  TimeframeKeys,
+  TitleAtividade,
+} from '../../Context/types/Atividade.interface';
 
 type CardAtividadeProps = {
-  tipo: TipoAtividade;
+  tipo: TitleAtividade;
   horasAtuais: number;
   horasPassadas: number;
+  periodo: TimeframeKeys | null;
+};
+
+const textoPeriodo = {
+  daily: 'day',
+  weekly: 'week',
+  monthly: 'month',
 };
 
 /**
@@ -22,11 +26,13 @@ type CardAtividadeProps = {
  * @param {TipoAtividade} tipo Tipo de atividade que o usuário realziou.
  * @param {number} horaAtual Quantas horas o usuário executou a atividade no período atual.
  * @param {number} horasPassadas Quantas horas o usuário executou a atividade no período passado.
+ * @param {TimeframeKeys} periodo O período ao qual se refere os dados.
  */
 const CardAtividade: FC<CardAtividadeProps> = ({
   tipo,
   horasAtuais,
   horasPassadas,
+  periodo,
 }) => {
   const [opcoesHover, setOpcoesHover] = React.useState<boolean>(false);
 
@@ -42,9 +48,11 @@ const CardAtividade: FC<CardAtividadeProps> = ({
 
         <h2 className={estilos.horas}>{horasAtuais}hrs</h2>
 
-        <span className={estilos.ultimaSemana}>
-          Last Week - {horasPassadas}hrs
-        </span>
+        {periodo && (
+          <span className={estilos.ultimaSemana}>
+            Last {textoPeriodo[periodo]} - {horasPassadas}hrs
+          </span>
+        )}
       </div>
     </div>
   );

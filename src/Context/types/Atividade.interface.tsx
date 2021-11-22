@@ -5,9 +5,17 @@ interface Timeframe {
 
 export type TimeframeKeys = 'daily' | 'weekly' | 'monthly';
 
+export type TitleAtividade =
+  | 'work'
+  | 'play'
+  | 'study'
+  | 'exercise'
+  | 'social'
+  | 'self_care';
+
 interface AtividadeItem {
-  title: string | null;
-  timeframes: Timeframe | null;
+  title: TitleAtividade;
+  timeframes: Timeframe;
 }
 
 export interface AtividadeContextState {
