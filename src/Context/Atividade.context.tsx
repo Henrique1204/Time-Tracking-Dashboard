@@ -14,8 +14,9 @@ const INITIAL_STATE: AtividadeContextState = {
   timeframeAtivo: null,
 };
 
-const AtividadeContext =
-  createContext<[AtividadeContextState, AtividadeDispatch] | null>(null);
+const AtividadeContext = createContext<
+  [AtividadeContextState, AtividadeDispatch] | null
+>(null);
 
 const atividadeReducer = (
   state: AtividadeContextState,
