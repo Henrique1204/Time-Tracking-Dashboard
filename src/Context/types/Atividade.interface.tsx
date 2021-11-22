@@ -3,30 +3,30 @@ interface Timeframe {
   previous: number;
 }
 
-export interface AtividadeContextoEstado {
+export interface AtividadeContextState {
   title: string | null;
   timeframes: Timeframe | null;
   timeframeAtivo: 'daily' | 'weekly' | 'monthly' | null;
 }
 
-export enum AtividadeNomeAcoes {
+export enum AtividadeActionName {
   SET_TIMEFRAME_DAILY = 'SET_TIMEFRAME_DAILY',
   SET_TIMEFRAME_WEEKLY = 'SET_TIMEFRAME_WEEKLY',
   SET_TIMEFRAME_MONTHLY = 'SET_TIMEFRAME_MONTHLY',
 }
 
-export interface AtividadeAcoesContextoPayloads {
-  [AtividadeNomeAcoes.SET_TIMEFRAME_DAILY]: AtividadeContextoEstado;
-  [AtividadeNomeAcoes.SET_TIMEFRAME_WEEKLY]: AtividadeContextoEstado;
-  [AtividadeNomeAcoes.SET_TIMEFRAME_MONTHLY]: AtividadeContextoEstado;
+export interface AtividadeContextActionPayloads {
+  [AtividadeActionName.SET_TIMEFRAME_DAILY]: AtividadeContextState;
+  [AtividadeActionName.SET_TIMEFRAME_WEEKLY]: AtividadeContextState;
+  [AtividadeActionName.SET_TIMEFRAME_MONTHLY]: AtividadeContextState;
 }
 
-export interface AtividadeAcoesContexto {
-  type: AtividadeNomeAcoes;
-  payload: any;
+export interface AtividadeContextAction {
+  type: AtividadeActionName;
+  payload: unknown;
 }
 
-export type AtividadeDispatch = <T extends AtividadeNomeAcoes>(
+export type AtividadeDispatch = <T extends AtividadeActionName>(
   type: T,
-  payload: AtividadeAcoesContextoPayloads[T]
+  payload: AtividadeContextActionPayloads[T]
 ) => void;

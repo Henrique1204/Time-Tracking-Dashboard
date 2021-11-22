@@ -1,3 +1,3 @@
-import BotaoOpcoes from './BotaoOpcoes.component';
+import BotaoOpcoes from './BotaoOpcoes.componente';
 
 export default BotaoOpcoes;

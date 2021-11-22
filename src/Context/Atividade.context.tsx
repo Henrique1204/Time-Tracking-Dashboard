@@ -1,31 +1,31 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 import {
-  AtividadeAcoesContexto,
-  AtividadeContextoEstado,
+  AtividadeContextAction,
+  AtividadeContextState,
   AtividadeDispatch,
-  AtividadeNomeAcoes,
+  AtividadeActionName,
 } from './types/Atividade.interface';
 
-const INITIAL_STATE: AtividadeContextoEstado = {
+const INITIAL_STATE: AtividadeContextState = {
   title: null,
   timeframes: null,
   timeframeAtivo: null,
 };
 
-const AtividadeContexto =
-  createContext<[AtividadeContextoEstado, AtividadeDispatch] | null>(null);
+const AtividadeContext =
+  createContext<[AtividadeContextState, AtividadeDispatch] | null>(null);
 
 const atividadeReducer = (
-  state: AtividadeContextoEstado,
-  action: AtividadeAcoesContexto
-): AtividadeContextoEstado => {
+  state: AtividadeContextState,
+  action: AtividadeContextAction
+): AtividadeContextState => {
   switch (action.type) {
-    case AtividadeNomeAcoes.SET_TIMEFRAME_DAILY:
+    case AtividadeActionName.SET_TIMEFRAME_DAILY:
       return { ...state };
-    case AtividadeNomeAcoes.SET_TIMEFRAME_WEEKLY:
+    case AtividadeActionName.SET_TIMEFRAME_WEEKLY:
       return { ...state };
-    case AtividadeNomeAcoes.SET_TIMEFRAME_MONTHLY:
+    case AtividadeActionName.SET_TIMEFRAME_MONTHLY:
       return { ...state };
     default:
       return state;
@@ -36,20 +36,21 @@ export const AtividadeProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(atividadeReducer, INITIAL_STATE);
 
   return (
-    <AtividadeContexto.Provider
+    <AtividadeContext.Provider
       value={[state, (type, payload) => dispatch({ type, payload })]}
     >
       {children}
-    </AtividadeContexto.Provider>
+    </AtividadeContext.Provider>
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useAtividade = () => {
-  const atividadeContexto = useContext(AtividadeContexto);
+  const atividadeContext = useContext(AtividadeContext);
 
-  if (!atividadeContexto) return null;
+  if (!atividadeContext) return null;
 
-  return { ...atividadeContexto[0], dispatch: atividadeContexto[1] };
+  return { ...atividadeContext[0], dispatch: atividadeContext[1] };
 };
 
-export default AtividadeContexto;
+export default AtividadeContext;
