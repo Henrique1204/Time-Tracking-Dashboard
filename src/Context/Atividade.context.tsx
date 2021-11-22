@@ -1,15 +1,16 @@
 import React, { createContext, useContext, useReducer } from 'react';
+import data from '../data.json';
 
 import {
   AtividadeContextAction,
   AtividadeContextState,
   AtividadeDispatch,
   AtividadeActionName,
+  TimeframeKeys,
 } from './types/Atividade.interface';
 
 const INITIAL_STATE: AtividadeContextState = {
-  title: null,
-  timeframes: null,
+  atividades: [],
   timeframeAtivo: null,
 };
 
@@ -22,11 +23,19 @@ const atividadeReducer = (
 ): AtividadeContextState => {
   switch (action.type) {
     case AtividadeActionName.SET_TIMEFRAME_DAILY:
-      return { ...state };
+      localStorage.setItem('timeframe', 'daily');
+
+      return { ...state, timeframeAtivo: 'daily' };
     case AtividadeActionName.SET_TIMEFRAME_WEEKLY:
-      return { ...state };
+      localStorage.setItem('timeframe', 'weekly');
+
+      return { ...state, timeframeAtivo: 'weekly' };
     case AtividadeActionName.SET_TIMEFRAME_MONTHLY:
-      return { ...state };
+      localStorage.setItem('timeframe', 'monthly');
+
+      return { ...state, timeframeAtivo: 'monthly' };
+    case AtividadeActionName.SET_ATIVIDADES:
+      return { ...state, atividades: action.payload };
     default:
       return state;
   }
@@ -34,6 +43,25 @@ const atividadeReducer = (
 
 export const AtividadeProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(atividadeReducer, INITIAL_STATE);
+
+  React.useEffect(() => {
+    const timeframeInStorage = localStorage.getItem(
+      'timeframe'
+    ) as TimeframeKeys;
+
+    const timeframeAtivo: TimeframeKeys =
+      timeframeInStorage || state.timeframeAtivo || 'daily';
+
+    const atividades = data.map(({ title, timeframes }) => ({
+      title,
+      timeframes: timeframes[timeframeAtivo],
+    }));
+
+    dispatch({
+      type: AtividadeActionName.SET_ATIVIDADES,
+      payload: atividades,
+    });
+  }, [state.timeframeAtivo]);
 
   return (
     <AtividadeContext.Provider

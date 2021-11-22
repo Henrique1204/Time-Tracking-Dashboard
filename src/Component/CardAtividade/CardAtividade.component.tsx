@@ -32,7 +32,7 @@ const CardAtividade: FC<CardAtividadeProps> = ({
 
   return (
     <div className={`${estilos.container} ${estilos[tipo]}`}>
-      <div className={estilos.conteudo} data-hoverInativo={opcoesHover}>
+      <div className={estilos.conteudo} data-hoverinativo={opcoesHover}>
         <span className={estilos.categoria}>{tipo.replace('_', ' ')}</span>
 
         <BotaoOpcoes

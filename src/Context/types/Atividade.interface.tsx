@@ -3,27 +3,36 @@ interface Timeframe {
   previous: number;
 }
 
-export interface AtividadeContextState {
+export type TimeframeKeys = 'daily' | 'weekly' | 'monthly';
+
+interface AtividadeItem {
   title: string | null;
   timeframes: Timeframe | null;
-  timeframeAtivo: 'daily' | 'weekly' | 'monthly' | null;
+}
+
+export interface AtividadeContextState {
+  atividades: AtividadeItem[];
+  timeframeAtivo: TimeframeKeys | null;
 }
 
 export enum AtividadeActionName {
   SET_TIMEFRAME_DAILY = 'SET_TIMEFRAME_DAILY',
   SET_TIMEFRAME_WEEKLY = 'SET_TIMEFRAME_WEEKLY',
   SET_TIMEFRAME_MONTHLY = 'SET_TIMEFRAME_MONTHLY',
+  SET_ATIVIDADES = 'SET_ATIVIDADES',
 }
 
 export interface AtividadeContextActionPayloads {
-  [AtividadeActionName.SET_TIMEFRAME_DAILY]: AtividadeContextState;
-  [AtividadeActionName.SET_TIMEFRAME_WEEKLY]: AtividadeContextState;
-  [AtividadeActionName.SET_TIMEFRAME_MONTHLY]: AtividadeContextState;
+  [AtividadeActionName.SET_TIMEFRAME_DAILY]: null;
+  [AtividadeActionName.SET_TIMEFRAME_WEEKLY]: null;
+  [AtividadeActionName.SET_TIMEFRAME_MONTHLY]: null;
+  [AtividadeActionName.SET_ATIVIDADES]: AtividadeItem[];
 }
 
 export interface AtividadeContextAction {
   type: AtividadeActionName;
-  payload: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  payload: any;
 }
 
 export type AtividadeDispatch = <T extends AtividadeActionName>(

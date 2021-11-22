@@ -2,8 +2,16 @@ import React from 'react';
 
 import SideBar from './Component/SideBar';
 import CardAtividade from './Component/CardAtividade';
+import { useAtividade } from './Context/Atividade.context';
 
 const App = (): JSX.Element => {
+  const atividade = useAtividade();
+
+  React.useEffect(
+    () => console.log(atividade?.atividades),
+    [atividade?.atividades]
+  );
+
   return (
     <main className="App">
       <SideBar />

@@ -55,9 +55,9 @@
   transition: background-color 0.3s ease;
 }
 
-.conteudo[data-hoverInativo=false]:hover,
-.conteudo[data-hoverInativo=false]:focus,
-.conteudo[data-hoverInativo=false]:active {
+.conteudo[data-hoverinativo=false]:hover,
+.conteudo[data-hoverinativo=false]:focus,
+.conteudo[data-hoverinativo=false]:active {
   background-color: var(--bg-azul-claro);
 }
 
