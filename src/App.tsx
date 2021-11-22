@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SideBar from './Componentes/SideBar';
-import CardAtividade from './Componentes/CardAtividade';
+import SideBar from './Component/SideBar';
+import CardAtividade from './Component/CardAtividade';
 
 const App = (): JSX.Element => {
   return (
