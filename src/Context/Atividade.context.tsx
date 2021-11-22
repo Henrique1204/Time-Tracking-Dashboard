@@ -22,18 +22,10 @@ const atividadeReducer = (
   action: AtividadeContextAction
 ): AtividadeContextState => {
   switch (action.type) {
-    case AtividadeActionName.SET_TIMEFRAME_DAILY:
-      localStorage.setItem('timeframe', 'daily');
+    case AtividadeActionName.SET_TIMEFRAME:
+      localStorage.setItem('timeframe', action.payload);
 
-      return { ...state, timeframeAtivo: 'daily' };
-    case AtividadeActionName.SET_TIMEFRAME_WEEKLY:
-      localStorage.setItem('timeframe', 'weekly');
-
-      return { ...state, timeframeAtivo: 'weekly' };
-    case AtividadeActionName.SET_TIMEFRAME_MONTHLY:
-      localStorage.setItem('timeframe', 'monthly');
-
-      return { ...state, timeframeAtivo: 'monthly' };
+      return { ...state, timeframeAtivo: action.payload };
     case AtividadeActionName.SET_ATIVIDADES:
       return { ...state, atividades: action.payload };
     default:
@@ -45,23 +37,20 @@ export const AtividadeProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(atividadeReducer, INITIAL_STATE);
 
   React.useEffect(() => {
-    const timeframeInStorage = localStorage.getItem(
-      'timeframe'
-    ) as TimeframeKeys;
+    if (!state.timeframeAtivo) {
+      const timeframeInStorage = localStorage.getItem(
+        'timeframe'
+      ) as TimeframeKeys;
 
-    const timeframeAtivo: TimeframeKeys =
-      timeframeInStorage || state.timeframeAtivo;
-
-    if (!timeframeAtivo) {
       return dispatch({
-        type: AtividadeActionName.SET_TIMEFRAME_DAILY,
-        payload: null,
+        type: AtividadeActionName.SET_TIMEFRAME,
+        payload: timeframeInStorage || 'daily',
       });
     }
 
     const atividades = data.map(({ title, timeframes }) => ({
       title: title.toLowerCase().replace(' ', '_'),
-      timeframes: timeframes[timeframeAtivo],
+      timeframes: timeframes[state.timeframeAtivo as TimeframeKeys],
     }));
 
     dispatch({

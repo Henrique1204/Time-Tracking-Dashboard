@@ -24,16 +24,12 @@ export interface AtividadeContextState {
 }
 
 export enum AtividadeActionName {
-  SET_TIMEFRAME_DAILY = 'SET_TIMEFRAME_DAILY',
-  SET_TIMEFRAME_WEEKLY = 'SET_TIMEFRAME_WEEKLY',
-  SET_TIMEFRAME_MONTHLY = 'SET_TIMEFRAME_MONTHLY',
+  SET_TIMEFRAME = 'SET_TIMEFRAME',
   SET_ATIVIDADES = 'SET_ATIVIDADES',
 }
 
 export interface AtividadeContextActionPayloads {
-  [AtividadeActionName.SET_TIMEFRAME_DAILY]: null;
-  [AtividadeActionName.SET_TIMEFRAME_WEEKLY]: null;
-  [AtividadeActionName.SET_TIMEFRAME_MONTHLY]: null;
+  [AtividadeActionName.SET_TIMEFRAME]: TimeframeKeys;
   [AtividadeActionName.SET_ATIVIDADES]: AtividadeItem[];
 }
 
